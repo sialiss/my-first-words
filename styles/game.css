@@ -1,0 +1,59 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 16px;
+    font-weight: 300;
+}
+
+* {  
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    }
+
+body { 
+    margin: 0 auto; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: lightblue; /* Фоновый цвет и фоновый рисунок*/
+	color: black; /*Цвет текста на странице*/
+	background-attachment: fixed; /* Фон страницы фиксируется */
+	background-repeat: repeat; /* Изображение повторяется по горизонтали */
+} 
+
+.wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+    background-color:white;
+    /* top right bottom left */
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.wrapper-start {
+    max-width: 50%;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 5px;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+.wrapper-end {
+    max-width: 50%;
+    text-align: center;
+    font-size: small;
+    margin-top: 5px;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+.game-link-img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain; 
+}
+

@@ -6,10 +6,15 @@ html {
 }
 
 * {  
-    margin:0; 
-    padding:0;
-    box-sizing: border-box
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
 }
+
+img {
+    display: block;
+    margin: 0 auto;
+    }
 
 body { 
     margin: 0 auto; 
@@ -57,7 +62,7 @@ body {
 }
 
 .game-link-img {
-    width: 300px;
+    width: 200px;
     height: 100px;
     object-fit: contain; 
 }

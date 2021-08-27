@@ -14,9 +14,11 @@
     <!-- шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=DotGothic16&family=Roboto:wght@300&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
+    
+    <!-- Отдельно шрифт DotGothic16, потому что кириллица с гугл шрифтов не работает -->
+    <link href="fonts/DotGothic16/stylesheet.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -24,21 +26,12 @@
 
 <body>
     <div class="wrapper wrapper-start">
-        <h1>
+        <h1 location="current-location" id="current-location">
             название локации
         </h1>
     </div>
     <div class="wrapper">
-        <p style="white-space: pre-wrap;">text
-
-
-
-
-
-
-
-
-
+        <p style="white-space: pre-wrap;">текст
 
 
 
@@ -51,7 +44,29 @@
 
 
         </p>
+        <!-- На поле по центру игрок, на фоне локация, стрелочки перехода на другие локации по бокам -->
+        <p style="white-space: pre-wrap;">поле
+        
+        
+        
+        
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        </p>
     </div>
+
+        <a href="file:///C:/Users/Camellia/Programming/my-first-words/index.html">
+            <img src="images/main-page-link.png" class="game-link-img">
+        </a>
     <script src="scripts/game.js"></script>
 </body>
 
