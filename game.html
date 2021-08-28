@@ -9,7 +9,8 @@
     <title>my first words</title>
 
     <!-- стили -->
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/common-style.css" rel="stylesheet" type="text/css">
+    <link href="styles/game-page.css" rel="stylesheet" type="text/css">
 
     <!-- шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,48 +26,42 @@
 </head>
 
 <body>
-    <div class="wrapper wrapper-start">
-        <h1 location="current-location" id="current-location">
-            название локации
-        </h1>
+    <div class="wrapper main-wrapper">
+        <div class="wrapper wrapper-start">
+
+            <a class="wrapper wrapper-link" href="file:///C:/Users/Camellia/Programming/my-first-words/index.html">
+                <img src="images/main-page-link.png" class="main-link-img">
+            </a>
+
+            <div class="wrapper wrapper-location">
+            <h1 location="current-location">
+                название локации
+            </h1>
+            </div>
+        </div>
+
+        <div class="wrapper text">
+            <p>текст</p>
+        </div>
+
+        <div class="wrapper field">
+            <!-- На поле по центру игрок, на фоне локация, стрелочки перехода на другие локации по бокам -->
+            <p>поле</p>
+        </div>
+
+        <div class="wrapper items">
+            <p>items</p>
+        </div>
+
+        <div class="wrapper parameters">
+            <p>parameters</p>
+        </div>
+
+        <div class="wrapper history">
+            <p>history</p>
+        </div>
+
     </div>
-    <div class="wrapper">
-        <p style="white-space: pre-wrap;">текст
-
-
-
-
-
-
-
-
-
-
-
-        </p>
-        <!-- На поле по центру игрок, на фоне локация, стрелочки перехода на другие локации по бокам -->
-        <p style="white-space: pre-wrap;">поле
-        
-        
-        
-        
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        </p>
-    </div>
-
-        <a href="file:///C:/Users/Camellia/Programming/my-first-words/index.html">
-            <img src="images/main-page-link.png" class="game-link-img">
-        </a>
     <script src="scripts/game.js"></script>
 </body>
 
