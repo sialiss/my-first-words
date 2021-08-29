@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- кодировка -->
     <meta charset="utf-8">
 
     <!-- название -->
     <title>my first words</title>
-
+    
     <!-- стили -->
     <link href="styles/common-style.css" rel="stylesheet" type="text/css">
     <link href="styles/game-page.css" rel="stylesheet" type="text/css">
@@ -21,15 +20,13 @@
     <!-- Отдельно шрифт DotGothic16, потому что кириллица с гугл шрифтов не работает -->
     <link href="fonts/DotGothic16/stylesheet.css" rel="stylesheet" type="text/css" />
 
-
-
 </head>
 
 <body>
     <div class="wrapper main-wrapper">
         <div class="wrapper wrapper-start">
 
-            <a class="wrapper wrapper-link" href="file:///C:/Users/Camellia/Programming/my-first-words/index.html">
+            <a class="wrapper wrapper-link" href="http://192.168.0.104:8080">
                 <img src="images/main-page-link.png" class="main-link-img">
             </a>
 
@@ -46,8 +43,7 @@
 
         <div class="wrapper field" id="field">
             <!-- На поле по центру игрок, на фоне локация, стрелочки перехода на другие локации по бокам -->
-            <!-- <p>поле</p> -->
-
+            <p>поле</p>
         </div>
 
         <div class="wrapper items">
@@ -63,7 +59,8 @@
         </div>
 
     </div>
-    <script src="scripts/game.js"></script>
+
+    <script type="module" src="scripts/game.js"></script>
 </body>
 
 </html>
