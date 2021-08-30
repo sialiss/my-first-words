@@ -5,6 +5,7 @@ const locations = ["first location", "second location"]
 const currentLocation = Array.from(document.querySelectorAll("[location='current-location']"))
 const fieldDoc = document.getElementById("field")
 const startFilling = ("<p style='box-shadow: 0px 0px 0px 1px lightblue'>пусто</p>").repeat(25)
+const gamerPic = "images\gamer.gif"
 
 function currentLocationChange(nextLocation) {
     for (const location of currentLocation) {
