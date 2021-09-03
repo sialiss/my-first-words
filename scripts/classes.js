@@ -26,35 +26,40 @@ export class Game {
         const field = new Field(this.fieldInfo[0], this.fieldInfo[1])
     }
 }
-
 export class Creature {
 
-    // класс для всех созданий (NPC)
+    // надкласс игрока, нпс и предметов
     
-    constructor(title, name, appearance) {
+    constructor(title, picture) {
         this.title = title
-        this.name = name
-        this.appearance = appearance
+        this.picture = picture
     }
 
+}
+
+export class NonPlayerCharacter extends Creature {
+
+    // класс для всех созданий (NPC)
+
+    constructor(title, picture) {
+        super(title, picture)
+    }
 }
 
 export class Gamer extends Creature {
 
     // класс для игрока, здесь же будут все его параметры и навыки
 
-    constructor(title, name, appearance) {
-        super(title, name, appearance)
+    constructor(title, picture) {
+        super(title, picture)
     }
 }
 
-export class Item {
+export class Item extends Creature {
 
     // picture - это ссылка на изображение
-    constructor(title, picture, startCell) {
-        this.title = title
-        this.picture = picture
-        this.startCell = startCell
+    constructor(title, picture) {
+        super(title, picture)
     }
 }
 
@@ -70,20 +75,20 @@ export class Field {
 
     fillingCreation(field, filling, amount = 25) {
 
-    // создание наполнения локации
-    
-    /* field - это адрес поля в документе
-    filling - массив с наполнением для каждой клетки
-    amount - количество клеток, по умолчанию 25 */
-    
-    /* мне нужно создать массив клеток с айди по номеру в массиве, 
-    сделать всех ребёнком поля, заполнить */
-    const cells = []
+        // создание наполнения локации
+        
+        /* field - это адрес поля в документе
+        filling - массив с наполнением для каждой клетки
+        amount - количество клеток, по умолчанию 25 */
+        
+        /* мне нужно создать массив клеток с айди по номеру в массиве, 
+        сделать всех ребёнком поля, заполнить */
+        this.cells = []
         for (let i = 0; i < amount; i++) {
-            cells[i] = new Cell(filling[i], this.field)
+            this.cells[i] = new Cell(filling[i], this.field)
         }
         
-    // ещё нужно будет сделать словарь (или мап) со всеми локациями, добавлять туда созданную локацию
+        // ещё нужно будет сделать словарь (или мап) со всеми локациями, добавлять туда созданную локацию
     }
 
     
@@ -111,10 +116,10 @@ export class Cell {
     fillingDisplay(field) {
         this.cellElement = document.createElement("p")
         this.cellElement.classList.add("cell")
-        this.image1 = document.createElement("img")
-        this.image1.classList.add("items-img")
-        this.image1.src = "images/gamer.gif" //this.items.что-то
-        this.cellElement.append(this.image1)
+        this.image = document.createElement("img")
+        this.image.classList.add("items-img")
+        this.image.src = "images/gamer.gif" //this.items.что-то
+        this.cellElement.append(this.image)
         field.append(this.cellElement)
     }
 }
