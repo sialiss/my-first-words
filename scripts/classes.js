@@ -3,12 +3,27 @@ export class Game {
     /* 
     здесь строится игра:
     в игру передаются всё данные, она создаёт нужные экземпляры классов с нужными данными
+
+    itemsInfo - название, картинка, индекс клетки
+    fieldInfo - адрес, массив с наполнением для каждой клетки
+    creaturesInfo - 
+    gamerInfo - 
     */
     
-    constructor(gamerInfo, creaturesInfo, fieldInfo) {
+    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo) {
         this.gamerInfo = gamerInfo
         this.creaturesInfo = creaturesInfo
         this.fieldInfo = fieldInfo
+        this.itemsInfo = itemsInfo
+        this.start()
+    }
+    
+    start() {
+        this.formation()
+    }
+
+    formation() {
+        const field = new Field(this.fieldInfo[0], this.fieldInfo[1])
     }
 }
 
@@ -36,9 +51,10 @@ export class Gamer extends Creature {
 export class Item {
 
     // picture - это ссылка на изображение
-    constructor(title, picture) {
+    constructor(title, picture, startCell) {
         this.title = title
         this.picture = picture
+        this.startCell = startCell
     }
 }
 
@@ -52,20 +68,19 @@ export class Field {
         this.fillingCreation(this.field, this.filling)
     }
 
-    fillingCreation(field, newFilling, amount = 25) {
+    fillingCreation(field, filling, amount = 25) {
 
     // создание наполнения локации
     
     /* field - это адрес поля в документе
-    newFilling - массив с наполнением для каждой клетки
+    filling - массив с наполнением для каждой клетки
     amount - количество клеток, по умолчанию 25 */
     
     /* мне нужно создать массив клеток с айди по номеру в массиве, 
     сделать всех ребёнком поля, заполнить */
-        
-        for (i = 0; i < amount; i++) {
-            cells[i] = new Cell(newFilling[i])
-            field.append(cells[i])
+    const cells = []
+        for (let i = 0; i < amount; i++) {
+            cells[i] = new Cell(filling[i], this.field)
         }
         
     // ещё нужно будет сделать словарь (или мап) со всеми локациями, добавлять туда созданную локацию
@@ -82,21 +97,24 @@ export class Cell {
 
     // filling = {items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}
 
-    constructor({items, transition, npc}) {
+    constructor({items, transition, npc}, field) {
         this.items = items
         this.transition = transition
         this.npc = npc
+        this.fillingDisplay(field)
     }
 
 
     // создавать элементы (картинки) и делать их детьми клетки, 
     // добавлять в один мап все изображения(с ключом в виде экземляра класса),
     // чтобы потом убирать
-    fillingDisplay() {
-        image = document.createElement("img")
-        image.src = "cjvkgifohidigk"
-        this.element.append(image)
-
-
+    fillingDisplay(field) {
+        this.cellElement = document.createElement("p")
+        this.cellElement.classList.add("cell")
+        this.image1 = document.createElement("img")
+        this.image1.classList.add("items-img")
+        this.image1.src = "images/gamer.gif" //this.items.что-то
+        this.cellElement.append(this.image1)
+        field.append(this.cellElement)
     }
 }

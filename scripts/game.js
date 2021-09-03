@@ -3,9 +3,26 @@ import { Game, Creature, Gamer, Field } from './classes.js'
 
 const locations = ["first location", "second location"]
 const currentLocation = Array.from(document.querySelectorAll("[location='current-location']"))
+
+// gamer
+const gamerPic = "images/gamer.gif"
+const gamerInfo = [gamerPic]
+
+
+// field
 const fieldDoc = document.getElementById("field")
-const startFilling = ("<p style='box-shadow: 0px 0px 0px 1px lightblue'>пусто</p>").repeat(25)
-const gamerPic = "images\gamer.gif"
+// filling = [{items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}] - массив с объектами для каждой клетки
+const startFilling = [
+    { items: "const item1 = new Item(item1, 'images\gamer.gif')", transition: [], NPC: [] },
+    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+] // cells
+const fieldInfo = [fieldDoc, startFilling]
+
+// NPC
+const creaturesInfo = []
+
+// items
+const itemsInfo = []
 
 function currentLocationChange(nextLocation) {
     for (const location of currentLocation) {
@@ -15,4 +32,4 @@ function currentLocationChange(nextLocation) {
 
 currentLocationChange(locations[0])
 
-const field = new Field(fieldDoc, startFilling)
+const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo)

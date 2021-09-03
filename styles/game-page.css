@@ -76,6 +76,11 @@
     object-fit: contain; 
 }
 
-/* .cell {
+.cell {
+    object-fit: contain;
+    height: 100px;
+}
 
-} */
+.items-img {
+    height: 100%;
+}
