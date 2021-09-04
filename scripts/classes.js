@@ -118,7 +118,7 @@ export class Cell {
         this.cellElement.classList.add("cell")
         this.image = document.createElement("img")
         this.image.classList.add("items-img")
-        this.image.src = "images/gamer.gif" //this.items.что-то
+        this.image.src = "images/catcher3.gif" //this.items.что-то
         this.cellElement.append(this.image)
         field.append(this.cellElement)
     }
