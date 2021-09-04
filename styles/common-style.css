@@ -18,7 +18,7 @@ img {
 
 body { 
     margin: 0 auto; 
-    padding: 2%;
+    padding: 1% 7% 1% 7%;
     background: lightblue; /* Фоновый цвет и фоновый рисунок*/
 	color: black; /*Цвет текста на странице*/
 	background-attachment: fixed; /* Фон страницы фиксируется */

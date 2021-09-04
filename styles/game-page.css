@@ -1,7 +1,7 @@
 .main-wrapper {
     background: none;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 3fr 10fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr 5fr 1fr 1fr;
 }
 
 .wrapper-start {
@@ -9,9 +9,10 @@
     font-family: 'DotGothic16', sans-serif;
     grid-column: 1 / 3;
     background: none;
-    grid-template-columns: 150px 1fr 150px;
-    grid-template-rows: 100%;
+    grid-template-columns: 9rem 1fr 9rem;
     padding: 0;
+    align-content: center;
+    justify-self: center;
 }
 
 .wrapper-location {
@@ -19,7 +20,7 @@
     align-content: center;
     text-align: center;
     justify-self: center;
-    width: 300px;
+    width: 20rem;
     max-width: 100%;
     max-height: 100%;
 }
@@ -27,34 +28,8 @@
 .wrapper-link {
     background: none;
     padding: 0;
-}
-
-@media screen and (max-width: 530px) {
-    .wrapper-start {
-        grid-template-columns: 150px;
-        grid-template-rows: 1fr 1fr;
-        padding-bottom: 10px;
-    }
-
-    .wrapper-link {
-        grid-column: 1 / 3;
-        grid-row: 1 / 2;
-    }
-
-    .wrapper-location {
-        grid-column: 1 / 3;
-        grid-row: 2 / 3;
-    }
-
-    .main-wrapper {
-        grid-template-rows: 2fr 3fr 7fr 1fr 1fr;
-        width: 750px;
-    }
-
-    body {
-        width: 750px;
-        padding: 0;
-    }
+    align-content: center;
+    justify-self: center;
 }
 
 .text {
@@ -63,8 +38,8 @@
 
 .field {
     grid-column: 1 / 3;
-    grid-template-columns: repeat(5, minmax(100px, 1fr));
-    grid-template-rows: repeat(5, minmax(100px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
     gap: 0px;
     padding: 0;
     object-fit: contain;
@@ -90,4 +65,34 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+@media screen and (max-width: 530px) {
+    .wrapper-start {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .wrapper-link {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .wrapper-location {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .main-wrapper {
+        grid-template-rows: 2fr 1.5fr 3fr 1fr 1fr;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .cell {
+    object-fit: contain;
+    height: 100px;
+    }
 }
