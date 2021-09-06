@@ -102,7 +102,7 @@ export class Cell {
 
     // filling = {items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}
 
-    constructor({items, transition, npc}, field) {
+    constructor({items = [], transition = [], npc = []}, field) {
         this.items = items
         this.transition = transition
         this.npc = npc
@@ -113,13 +113,18 @@ export class Cell {
     // создавать элементы (картинки) и делать их детьми клетки, 
     // добавлять в один мап все изображения(с ключом в виде экземляра класса),
     // чтобы потом убирать
+
     fillingDisplay(field) {
         this.cellElement = document.createElement("p")
         this.cellElement.classList.add("cell")
-        this.image = document.createElement("img")
-        this.image.classList.add("items-img")
-        this.image.src = "images/catcher3.gif" //this.items.что-то
-        this.cellElement.append(this.image)
+
+        for (const item of this.items) {
+            const image = document.createElement("img")
+            image.classList.add("items-img")
+            image.src = item.picture
+            this.cellElement.append(image)
+        }
+        // пока что один предмет в клетке, доделай
         field.append(this.cellElement)
     }
 }

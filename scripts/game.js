@@ -1,5 +1,5 @@
 // import * as classes from classes.js
-import { Game, Creature, Gamer, Field } from './classes.js'
+import { Game, Creature, Gamer, Field, Item } from './classes.js'
 
 const locations = ["first location", "second location"]
 const currentLocation = Array.from(document.querySelectorAll("[location='current-location']"))
@@ -13,9 +13,33 @@ const gamerInfo = [gamerPic]
 const fieldDoc = document.getElementById("field")
 // filling = [{items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}] - массив с объектами для каждой клетки
 const startFilling = [
-    { items: "const item1 = new Item(item1, 'images\gamer.gif')", transition: [], NPC: [] },
-    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')] }
 ] // cells
+
 const fieldInfo = [fieldDoc, startFilling]
 
 // NPC
