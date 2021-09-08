@@ -119,9 +119,9 @@ export class Cell {
         this.cellElement.classList.add("cell")
 
         for (const item of this.items) {
-            const image = document.createElement("img")
+            const image = document.createElement("div")
             image.classList.add("items-img")
-            image.src = item.picture
+            image.style.backgroundImage = `url(${item.picture})`
             this.cellElement.append(image)
         }
         // пока что один предмет в клетке, доделай
