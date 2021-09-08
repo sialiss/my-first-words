@@ -120,7 +120,7 @@ export class Cell {
 
         for (const item of this.items) {
             const image = document.createElement("div")
-            image.classList.add("items-img")
+            image.classList.add("items-pic")
             image.style.backgroundImage = `url(${item.picture})`
             this.cellElement.append(image)
         }

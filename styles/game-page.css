@@ -60,6 +60,7 @@
     display: grid;
     object-fit: contain;
     justify-items: center;
+    justify-self: center;
     height: 200px;
     width: 100%;
     grid-template-columns: 1fr 1fr;
@@ -75,13 +76,13 @@
     display: none
 }
 
-.items-img {
+.items-pic {
     display: block;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: contain;
-
+    background-position: center;
 }
 
 @media screen and (max-width: 530px) {
