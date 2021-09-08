@@ -13,12 +13,19 @@ const gamerInfo = [gamerPic]
 const fieldDoc = document.getElementById("field")
 // filling = [{items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}] - массив с объектами для каждой клетки
 const startFilling = [
-    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
-    { items: [new Item("item1", 'images/catcher3.gif')] },
-    { items: [new Item("item1", 'images/catcher3.gif')] },
-    { items: [new Item("item1", 'images/catcher3.gif')] },
-    { items: [new Item("item1", 'images/catcher3.gif')] },
-    { items: [new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
+    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
+    {
+        items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
+        new Item("item1", 'images/catcher3.gif')]
+    },
+    {
+        items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
+        new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')]
+    },
+    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
+        new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
     { items: [new Item("item1", 'images/catcher3.gif')] },
     { items: [new Item("item1", 'images/catcher3.gif')] },
     { items: [new Item("item1", 'images/catcher3.gif')] },

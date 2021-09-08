@@ -57,11 +57,26 @@
 }
 
 .cell {
+    display: grid;
     object-fit: contain;
+    justify-items: center;
     height: 200px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.cell > img:first-child:last-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.cell > img:nth-child(n+5) {
+    display: none
 }
 
 .items-img {
+    display: block;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
