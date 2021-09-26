@@ -46,6 +46,8 @@
     gap: 0px;
     padding: 0;
     object-fit: contain;
+    background-image: url(../images/field-background/1.png);
+    background-size: 100%;
 }
 
 .items {
@@ -84,6 +86,7 @@
     width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    box-shadow: 0px 0px 0px 1px lightblue;
 }
 
 .cell > div:first-child:last-child {
