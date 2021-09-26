@@ -1,20 +1,21 @@
 // import * as classes from classes.js
-import { Game, Creature, Gamer, Field, Item } from './classes.js'
+import Game from './classes/game.js'
+import Item from './classes/item.js'
 
 const locations = ["first location", "second location"]
 const currentLocation = Array.from(document.querySelectorAll("[location='current-location']"))
 
 // gamer
 const gamerPic = "images/gamer.gif"
-const gamerInfo = [gamerPic]
-
+let gamerName = "YourName"
+const gamerInfo = [gamerName, gamerPic]
 
 // field
 const fieldDoc = document.getElementById("field")
-/* filling = [gamer : экземпляр класса, {items : "[экземпляры класса]", 
-transition: "[что-то]", NPC : "[экземпляры класса]"}] - массив с объектами для каждой клетки */
+/* filling = [{items : "[экземпляры класса]", transition: "[что-то]", 
+NPC : "[экземпляры класса]"}] - массив с объектами для каждой клетки */
 const startFilling = [
-    { gamer: new Gamer("gamer", "images/gamer.gif"), items: [new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
+    { items: [new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
     { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
     { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
     {items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
@@ -63,3 +64,4 @@ function currentLocationChange(nextLocation) {
 currentLocationChange(locations[0])
 
 const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo)
+game.start()
