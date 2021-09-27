@@ -1,4 +1,5 @@
 import { eventBus } from "./eventBus.js"
+import Item from "./item.js"
 
 export default class Cell {
 
@@ -7,8 +8,8 @@ export default class Cell {
     в мапе: наполнение (предметы, переход, нпс) */
     // filling = {items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}
 
-    constructor({ items = [], transition = [], npc = [] }, field) {
-        this.items = items
+    constructor({ items = new Set(), transition = [], npc = [] }, field) {
+        this.items = new Set(items)
         this.transition = transition
         this.npc = npc
         this.elements = new Map()
@@ -37,7 +38,10 @@ export default class Cell {
         image.classList.add("items-pic")
         image.style.backgroundImage = `url(${object.picture})`
         this.cellElement.insertAdjacentElement('afterbegin', image)
-        this.elements.set(object, image) //картинка добавляется в мап с изображениями, экземпляр класса её ключ 
+        this.elements.set(object, image) // картинка добавляется в мап с изображениями, экземпляр класса её ключ
+        if (object.constructor.name == "Item") {
+            this.items.add(object)
+        }
     }
 
     elementRemove(object) {

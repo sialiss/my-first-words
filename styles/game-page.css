@@ -50,8 +50,9 @@
     background-size: 100%;
 }
 
-.items {
+.inventory {
     grid-column: 4 / 6;
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .param-hist {
@@ -107,6 +108,15 @@
     background-position: center;
 }
 
+.cellInv {
+    display: grid;
+    object-fit: contain;
+    justify-items: center;
+    justify-self: center;
+    height: 50px;
+    width: 100%;
+}
+
 @media screen and (max-width: 940px) {
     .wrapper-start {
         grid-column: 1 / 6;
@@ -132,7 +142,7 @@
         object-fit: contain;
     }
 
-    .items {
+    .inventory {
         grid-column: 1 / 6;
         grid-row: 4 / 5;
     }
