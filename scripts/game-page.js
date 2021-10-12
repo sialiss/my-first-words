@@ -59,6 +59,11 @@ const itemsInfo = []
 const invDoc = document.getElementById("inventory")
 const invInfo = [invDoc]
 
+// actions
+const actDoc = document.getElementById("actions")
+const actions = []
+const actInfo = [actDoc, actions]
+
 function currentLocationChange(nextLocation) {
     for (const location of currentLocation) {
         location.innerText = nextLocation
@@ -67,5 +72,5 @@ function currentLocationChange(nextLocation) {
 
 currentLocationChange(locations[0])
 
-const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo)
+const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo)
 game.start()

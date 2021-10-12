@@ -1,3 +1,4 @@
+import { eventBus } from './eventBus.js'
 export default class Inventory {
 
     constructor([invDoc], items = []) {
@@ -18,7 +19,7 @@ export default class Inventory {
         itemImage.style.backgroundImage = `url(${item.picture})`
         this.invDoc.append(itemImage)
         this.elements.set(item, itemImage)
+        itemImage.addEventListener("click", () => eventBus.dispatch("open actions menu own item", item))
     }
-
 
 }

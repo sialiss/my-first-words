@@ -36,6 +36,16 @@
 .text {
     grid-column: 4 / 6;
     grid-row: 1 / 5;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.actions {
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chat {
+    grid-row: 2 / 3;
 }
 
 .field {

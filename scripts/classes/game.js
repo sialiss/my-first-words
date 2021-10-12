@@ -3,6 +3,7 @@ import Field from './field.js'
 import NonPlayerCharacter from './NPC.js'
 import { eventBus } from './eventBus.js'
 import Inventory from './inventory.js'
+import Actions from './actions.js'
 
 export default class Game {
 
@@ -16,25 +17,33 @@ export default class Game {
     gamerInfo - [gamerPic, gamerName]
     */
     
-    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo) {
+    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, ActInfo) {
         this.gamerInfo = gamerInfo
         this.creaturesInfo = creaturesInfo
         this.fieldInfo = fieldInfo
         this.itemsInfo = itemsInfo
         this.invInfo = invInfo
+        this.ActInfo = ActInfo
     }
     
     start() {
         // создание всего
 
-        this.formation()
+        this.fieldCreate()
         this.gamerCreate(this.gamerInfo)
         this.inventoryCreate()
+        this.actionsCreate()
     }
 
-    formation() {
+    fieldCreate() {
         // создание поля
         this.field = new Field(this.fieldInfo[0], this.fieldInfo[1])
+    }
+
+    actionsCreate() {
+        // создание действий
+        this.actions = new Actions(this.ActInfo)
+        eventBus.listen("open actions menu own item", (item) => this.actions.putItem(item))
     }
 
     inventoryCreate() {
