@@ -19,9 +19,14 @@ export default class Gamer extends Creature {
     takeItem(cell) {
         // если предмет в клетке есть, то взять
         if (cell.items.size != 0) {
-            cell.elementRemove(cell.items.values().next().value)
-            eventBus.dispatch("item taken", cell.items.values().next().value)
-            cell.items.delete(cell.items.values().next().value)
+            cell.elementRemove(cell.items.values().next().value) // убрать элемент из элемента клетки
+            eventBus.dispatch("item taken", cell.items.values().next().value) // сигнал игре (добавить в инвентарь)
+            cell.items.delete(cell.items.values().next().value) // удаление предмета из списка предметов клетки
         }
+    }
+
+    putItem(item) {
+        console.log(item)
+        this.position.elementAdd(item, 'beforeend')
     }
  }

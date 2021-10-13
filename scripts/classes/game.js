@@ -43,7 +43,7 @@ export default class Game {
     actionsCreate() {
         // создание действий
         this.actions = new Actions(this.ActInfo)
-        eventBus.listen("open actions menu own item", (item) => this.actions.putItem(item))
+        eventBus.listen("own item clicked", (item) => this.actions.interactItemMenu(item))
     }
 
     inventoryCreate() {
@@ -58,5 +58,6 @@ export default class Game {
         this.gamer.position.elementAdd(this.gamer)
         eventBus.listen("cell clicked", (cell) => this.gamer.moveToCell(cell))
         eventBus.listen("cell clicked", (cell) => this.gamer.takeItem(cell))
+        eventBus.listen("put item", (item) => this.gamer.putItem(item))
     }
 }
