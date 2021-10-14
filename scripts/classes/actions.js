@@ -19,31 +19,49 @@ export default class Actions {
             item.menuStatus = 1
 
             this.mainWrapNode = document.getElementById("wrapper-with-actions-and-chat")
+            if (this.mainWrapNode.firstElementChild.classList.contains("itemAction")) {
+                // присвоить прошлому предмету статус меню 0
+                this.mainWrapNode.firstElementChild.ownItem.menuStatus = 0
+            }
             this.mainWrapNode.firstElementChild.remove() // убирает первый элемент (в том числе благодаря этому оно не повторяется)
             
             // создаётся меню действий с предметом
             const actionElement = document.createElement("div")
+            actionElement.ownItem = item
             actionElement.classList.add("wrapper")
             actionElement.classList.add("actions")
+            actionElement.classList.add("itemAction")
             this.mainWrapNode.insertAdjacentElement('afterbegin', actionElement)
 
             // создание кнопок
-            const putItem = document.createElement("button")
-            putItem.innerText = "put item"
-            actionElement.append(putItem)
-
-            // тут действие по клику
-            putItem.addEventListener("click", () => eventBus.dispatch("put item", item))
+            this.createButton("put item", () => this.putItem(item), actionElement)
         }
 
         else {
-            item.menuStatus = 0
-
-            this.mainWrapNode.firstElementChild.remove() // убирает меню
-            this.mainWrapNode.insertAdjacentElement('afterbegin', this.actMenu)
+            this.hideMenu(item)
         }
     }
 
+    createButton(name, func, parent) {
+        const btn = document.createElement("button")
+        btn.innerText = name
+        parent.append(btn)
+
+        btn.addEventListener("click", func) // тут действие по клику
+    }
+
+    hideMenu(item) {
+        item.menuStatus = 0
+
+        this.mainWrapNode.firstElementChild.remove() // убирает меню
+        this.mainWrapNode.insertAdjacentElement('afterbegin', this.actMenu) // возвращает меню для общих действий
+    }
+
+    putItem(item) {
+        this.hideMenu(item)
+        eventBus.dispatch("put item", item)
+    }
+    
     doSomething() {
         console.log('делаю')
     }

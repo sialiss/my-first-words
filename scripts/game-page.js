@@ -15,17 +15,17 @@ const fieldDoc = document.getElementById("field")
 /* filling = [{items : "[экземпляры класса]", transition: "[что-то]", 
 NPC : "[экземпляры класса]"}] - массив с объектами для каждой клетки */
 const startFilling = [
-    { items: [new Item("item1", 'images/catcher3.gif')], transition: [], NPC: [] },
-    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
-    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
-    {items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
-        new Item("item1", 'images/catcher3.gif')]
+    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item2", 'images/gamer.gif')], transition: [], NPC: [] },
+    { items: [new Item("item3", 'images/catcher3.gif'), new Item("item4", 'images/catcher3.gif')] },
+    { items: [new Item("item5", 'images/catcher3.gif'), new Item("item6", 'images/catcher3.gif'), new Item("item7", 'images/catcher3.gif')] },
+    {items: [new Item("item8", 'images/catcher3.gif'), new Item("item9", 'images/catcher3.gif'), new Item("item10", 'images/catcher3.gif'),
+        new Item("item11", 'images/catcher3.gif')]
     },
-    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
-        new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')]
+    { items: [new Item("item12", 'images/catcher3.gif'), new Item("item13", 'images/catcher3.gif'), new Item("item14", 'images/catcher3.gif'),
+        new Item("item15", 'images/catcher3.gif'), new Item("item16", 'images/catcher3.gif')]
     },
-    { items: [new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'),
-        new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif'), new Item("item1", 'images/catcher3.gif')] },
+    { items: [new Item("item17", 'images/catcher3.gif'), new Item("item18", 'images/catcher3.gif'), new Item("item19", 'images/catcher3.gif'),
+        new Item("item20", 'images/catcher3.gif'), new Item("item21", 'images/catcher3.gif'), new Item("item22", 'images/catcher3.gif')] },
     { },
     { },
     { },
