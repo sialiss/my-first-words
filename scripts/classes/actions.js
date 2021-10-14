@@ -32,7 +32,8 @@ export default class Actions {
             putItem.innerText = "put item"
             actionElement.append(putItem)
 
-            
+            // тут действие по клику
+            putItem.addEventListener("click", () => eventBus.dispatch("put item", item))
         }
 
         else {
@@ -45,10 +46,5 @@ export default class Actions {
 
     doSomething() {
         console.log('делаю')
-    }
-
-    putItem(item) {
-        console.log(item)
-        eventBus.dispatch("put item", item)
     }
 }

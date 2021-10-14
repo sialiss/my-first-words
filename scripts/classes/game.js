@@ -50,6 +50,7 @@ export default class Game {
         // создание инвентаря
         this.inventory = new Inventory(this.invInfo)
         eventBus.listen("item taken", (item) => this.inventory.addItem(item))
+        eventBus.listen("remove item from inventory", (item) => this.inventory.removeItem(item))
     }
 
     gamerCreate([gamerName, gamerPic]) {

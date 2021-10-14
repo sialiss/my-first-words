@@ -22,4 +22,8 @@ export default class Inventory {
         itemImage.addEventListener("click", () => eventBus.dispatch("own item clicked", item))
     }
 
+    removeItem(item) {
+        this.elements.get(item).remove()
+    }
+
 }

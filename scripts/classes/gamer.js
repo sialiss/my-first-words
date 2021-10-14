@@ -1,5 +1,6 @@
 import Creature from "./creature.js"
 import { eventBus } from './eventBus.js'
+import Inventory from "./inventory.js"
 
 export default class Gamer extends Creature {
 
@@ -26,7 +27,7 @@ export default class Gamer extends Creature {
     }
 
     putItem(item) {
-        console.log(item)
         this.position.elementAdd(item, 'beforeend')
+        eventBus.dispatch("remove item from inventory", item)
     }
  }
