@@ -3,6 +3,7 @@ import Field from './field.js'
 import NonPlayerCharacter from './NPC.js'
 import { eventBus } from './eventBus.js'
 import Inventory from './inventory.js'
+import Actions from './actions.js'
 
 export default class Game {
 
@@ -16,31 +17,40 @@ export default class Game {
     gamerInfo - [gamerPic, gamerName]
     */
     
-    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo) {
+    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, ActInfo) {
         this.gamerInfo = gamerInfo
         this.creaturesInfo = creaturesInfo
         this.fieldInfo = fieldInfo
         this.itemsInfo = itemsInfo
         this.invInfo = invInfo
+        this.ActInfo = ActInfo
     }
     
     start() {
         // создание всего
 
-        this.formation()
+        this.fieldCreate()
         this.gamerCreate(this.gamerInfo)
         this.inventoryCreate()
+        this.actionsCreate()
     }
 
-    formation() {
+    fieldCreate() {
         // создание поля
         this.field = new Field(this.fieldInfo[0], this.fieldInfo[1])
+    }
+
+    actionsCreate() {
+        // создание действий
+        this.actions = new Actions(this.ActInfo)
+        eventBus.listen("own item clicked", (item) => this.actions.interactItemMenu(item))
     }
 
     inventoryCreate() {
         // создание инвентаря
         this.inventory = new Inventory(this.invInfo)
         eventBus.listen("item taken", (item) => this.inventory.addItem(item))
+        eventBus.listen("remove item from inventory", (item) => this.inventory.removeItem(item))
     }
 
     gamerCreate([gamerName, gamerPic]) {
@@ -49,5 +59,6 @@ export default class Game {
         this.gamer.position.elementAdd(this.gamer)
         eventBus.listen("cell clicked", (cell) => this.gamer.moveToCell(cell))
         eventBus.listen("cell clicked", (cell) => this.gamer.takeItem(cell))
+        eventBus.listen("put item", (item) => this.gamer.putItem(item))
     }
 }

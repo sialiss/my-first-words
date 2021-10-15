@@ -32,12 +32,12 @@ export default class Cell {
         field.append(this.cellElement)
     }
 
-    elementAdd(object) {
+    elementAdd(object, position = 'afterbegin') {
         // здесь создаётся картинка объекта
         const image = document.createElement("div")
         image.classList.add("items-pic")
         image.style.backgroundImage = `url(${object.picture})`
-        this.cellElement.insertAdjacentElement('afterbegin', image)
+        this.cellElement.insertAdjacentElement(position, image)
         this.elements.set(object, image) // картинка добавляется в мап с изображениями, экземпляр класса её ключ
         if (object.constructor.name == "Item") {
             this.items.add(object)
