@@ -23,7 +23,8 @@ export default class Actions {
                 // присвоить прошлому предмету статус меню 0
                 this.mainWrapNode.firstElementChild.ownItem.menuStatus = 0
             }
-            this.mainWrapNode.firstElementChild.remove() // убирает первый элемент (в том числе благодаря этому оно не повторяется)
+            this.mainWrapNode.firstElementChild.remove()
+            // убирает первый элемент (в том числе благодаря этому оно не повторяется)
             
             // создаётся меню действий с предметом
             const actionElement = document.createElement("div")

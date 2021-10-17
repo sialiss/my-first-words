@@ -1,33 +1,35 @@
-import Cell from './cell.js'
+import Location from './location.js'
+import { eventBus } from "./eventBus.js"
 
 export default class Field {
 
     // класс поля, чтобы оно заполнялось тем, чем надо и тогда, когда надо
 
-    constructor(field, filling) {
-        this.field = field
-        this.filling = filling
-        this.fillingCreation()
+    constructor(fieldNode, locations, startLocation) {
+        this.fieldNode = fieldNode
+        this.locations = locations
+        this.currentLocation = startLocation
+        this.currentLocationNode
+        this.locationsCreate()
     }
 
-    fillingCreation() {
-        // создание наполнения локации
-        
-        /* field - это адрес поля в документе
-        filling - массив с наполнением для каждой клетки */
-        
-        /* мне нужно создать массив клеток с айди по номеру в массиве, 
-        сделать всех ребёнком поля, заполнить */
+    locationsCreate() {
+        // locationsInfo = {"first location" : firstLocation, "second location" : secondLocation}
 
-        this.cells = []
-        for (let i = 0; i < this.filling.length; i++) {
-            this.cells[i] = new Cell(this.filling[i], this.field)
+        for (let locationName of this.locations.keys()) {
+            // заменить информацию про локацию на объект локации
+            this.locations.set(locationName, new Location(locationName, this.locations.get(locationName)))
         }
 
-    
-        
-        // ещё нужно будет сделать словарь (или мап) со всеми локациями, добавлять туда созданную локацию
+        // сделать первую локацию ребёнком поля
+        this.currentLocation = this.locations.get(this.currentLocation)
+        this.fieldNode.append(this.currentLocation.locNode)
     }
 
-    
+    locationChange(nextLocation) {
+        this.currentLocation.locNode.remove()
+        this.fieldNode.append(this.locations.get(nextLocation).locNode)
+        this.currentLocation = this.locations.get(nextLocation)
+        eventBus.dispatch("location changed", this.currentLocation.filling[0])
+    }
 }

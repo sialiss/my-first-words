@@ -1,5 +1,4 @@
 import { eventBus } from "./eventBus.js"
-import Item from "./item.js"
 
 export default class Cell {
 
@@ -8,15 +7,13 @@ export default class Cell {
     в мапе: наполнение (предметы, переход, нпс) */
     // filling = {items : "[экземпляры класса]", transition = "[что-то]", NPC = "[экземпляры класса]"}
 
-    constructor({ items = new Set(), transition = [], npc = [] }, field) {
+    constructor(items = new Set(), locDoc) {
         this.items = new Set(items)
-        this.transition = transition
-        this.npc = npc
         this.elements = new Map()
-        this.fillingDisplay(field)
+        this.fillingDisplay(locDoc)
     }
 
-    fillingDisplay(field) {
+    fillingDisplay(locDoc) {
         // здесь создаются элементы (клетки) для объектов
         this.cellElement = document.createElement("p")
         this.cellElement.classList.add("cell")
@@ -24,12 +21,13 @@ export default class Cell {
         for (const item of this.items) {
             this.elementAdd(item) // для каждого предмета выполняется функция добавления (размещения)
         }
+
         this.cellElement.addEventListener("click", () => {
             eventBus.dispatch("cell clicked", this)
             
         }   )
 
-        field.append(this.cellElement)
+        locDoc.append(this.cellElement)
     }
 
     elementAdd(object, position = 'afterbegin') {

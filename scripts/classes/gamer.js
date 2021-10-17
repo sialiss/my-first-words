@@ -30,4 +30,5 @@ export default class Gamer extends Creature {
         this.position.elementAdd(item, 'beforeend')
         eventBus.dispatch("remove item from inventory", item)
     }
+
  }
