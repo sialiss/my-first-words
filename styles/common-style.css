@@ -39,3 +39,11 @@ body {
 h1 {
     line-height: 0.8;
 }
+
+.pop-up {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding: 0;
+}

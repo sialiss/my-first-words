@@ -14,7 +14,7 @@ export default class Inventory {
     addItem(item) {
         // здесь создаются элементы и картинки для предметов
 
-        const itemImage = document.createElement("div")
+        const itemImage = document.createElement("image")
         itemImage.classList.add("items-pic")
         itemImage.style.backgroundImage = `url(${item.picture})`
         this.invDoc.append(itemImage)

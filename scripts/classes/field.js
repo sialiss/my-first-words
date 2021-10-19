@@ -9,7 +9,6 @@ export default class Field {
         this.fieldNode = fieldNode
         this.locations = locations
         this.currentLocation = startLocation
-        this.currentLocationNode
         this.locationsCreate()
     }
 

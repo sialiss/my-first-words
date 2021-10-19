@@ -24,36 +24,37 @@
     <!-- Отдельно шрифт DotGothic16, потому что кириллица с гугл шрифтов не работает -->
     <link href="fonts/DotGothic16/stylesheet.css" rel="stylesheet" type="text/css" />
 
+    <!-- песенка -->
+    <audio src="music/bonobo-break-apart-instrumental.mp3" autoplay="autoplay" loop="true"></audio>
+
 </head>
 
 <body>
     <div class="wrapper main-wrapper">
         <div class="wrapper wrapper-start">
 
-            <a class="wrapper wrapper-link" href="index.html">
-                <img src="images/main-page-link.png" class="main-link-img">
-            </a>
+            <div class="wrapper wrapper-links">
+                <a class="wrapper wrapper-link">
+                    <img src="images/main-page-link.png" class="main-link-img">
+                </a>
+                <button class="settings-link" id="settings-link">настройки</p>
+            </div>
 
             <div class="wrapper wrapper-location">
-            <h1 location="current-location">
-                название локации
-            </h1>
+                <h1 location="current-location">название локации</h1>
             </div>
         </div>
 
         <div class="wrapper text" id = "wrapper-with-actions-and-chat">
-            <div class="wrapper actions" id="actions">
             
-            </div>
-            <div class="wrapper chat" id="chat">
-            </div>
+            <div class="wrapper actions" id="actions"></div>
+            <div class="wrapper chat" id="chat"></div>
+
         </div>
 
-        <div class="wrapper field" id="field">
-        </div>
+        <div class="wrapper field" id="field"></div>
 
-        <div class="wrapper inventory" id="inventory">
-        </div>
+        <div class="wrapper inventory" id="inventory"></div>
 
         <div class="wrapper param-hist">
             <div class="wrapper parameters">
@@ -65,6 +66,12 @@
             </div>
         </div>
 
+    </div>
+    
+    <div class = "wrapper high-wrapper pop-up">
+        <div class = "settings">
+            <p class="settingsText">Настройки</p>
+        </div>
     </div>
 
     <script type="module" src="scripts/game-page.js"></script>
