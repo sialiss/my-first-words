@@ -13,7 +13,7 @@ export default class Settings {
         this.popUpNode = settingsInfo.popUpNode
         this.btnOpen = settingsInfo.btnOpen
         this.audio = this.currentSet.audio
-        
+        this.audio.node.volume = 0.2
         this.manageSettings()
     }
 
