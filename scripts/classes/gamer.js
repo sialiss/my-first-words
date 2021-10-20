@@ -11,6 +11,10 @@ export default class Gamer extends Creature {
         this.position = position
     }
 
+    nameChange(name) {
+        this.title = name
+    }
+
     moveToCell(cell) {
         this.position.elementRemove(this)
         cell.elementAdd(this)

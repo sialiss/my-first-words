@@ -5,6 +5,7 @@ import { eventBus } from './eventBus.js'
 import Inventory from './inventory.js'
 import Actions from './actions.js'
 import Chat from './chat.js'
+import Settings from './settings.js'
 
 export default class Game {
 
@@ -18,7 +19,7 @@ export default class Game {
     gamerInfo - [gamerPic, gamerName]
     */
     
-    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation, chatInfo) {
+    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation, chatInfo, settingsInfo) {
         this.gamerInfo = gamerInfo
         this.creaturesInfo = creaturesInfo
         this.fieldInfo = fieldInfo
@@ -27,6 +28,7 @@ export default class Game {
         this.actInfo = actInfo
         this.chatInfo = chatInfo
         this.currentLocation = currentLocation
+        this.settingsInfo = settingsInfo
         this.locationNameChange(this.currentLocation, startLocation)
     }
     
@@ -38,6 +40,7 @@ export default class Game {
         this.inventoryCreate()
         this.actionsCreate()
         this.chatCreate()
+        this.settingsTune()
     }
 
     fieldCreate() {
@@ -72,6 +75,10 @@ export default class Game {
         eventBus.listen("cell clicked", (cell) => this.gamer.takeItem(cell))
         eventBus.listen("put item", (item) => this.gamer.putItem(item))
         eventBus.listen("location changed", (newPosition) => this.gamer.moveToCell(newPosition))
+    }
+
+    settingsTune() {
+        this.settings = new Settings(this.settingsInfo)
     }
 
     locationNameChange(currentLocation, nextLocation) {

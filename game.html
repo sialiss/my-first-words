@@ -24,8 +24,7 @@
     <!-- Отдельно шрифт DotGothic16, потому что кириллица с гугл шрифтов не работает -->
     <link href="fonts/DotGothic16/stylesheet.css" rel="stylesheet" type="text/css" />
 
-    <!-- песенка -->
-    <audio src="music/bonobo-break-apart-instrumental.mp3" autoplay="autoplay" loop="true"></audio>
+    
 
 </head>
 
@@ -34,10 +33,10 @@
         <div class="wrapper wrapper-start">
 
             <div class="wrapper wrapper-links">
-                <a class="wrapper wrapper-link">
+                <a class="wrapper wrapper-link" href="./index.html">
                     <img src="images/main-page-link.png" class="main-link-img">
                 </a>
-                <button class="settings-link" id="settings-link">настройки</p>
+                <button class="settings-btn" id="settings-btn">настройки</p>
             </div>
 
             <div class="wrapper wrapper-location">
@@ -68,9 +67,12 @@
 
     </div>
     
-    <div class = "wrapper high-wrapper pop-up">
-        <div class = "settings">
+    <div class = "hidden wrapper high-wrapper pop-up" id="pop-up">
+        <div class = "settings wrapper" id = settings>
             <p class="settingsText">Настройки</p>
+
+            <!-- песенка -->
+            <audio class = "audio" src="music/bonobo-break-apart-instrumental.mp3" controls autoplay="autoplay" loop="true" id = "audio"></audio>
         </div>
     </div>
 

@@ -15,7 +15,7 @@ export default class Chat {
 
     }
 
-    // tutorial(text) {
-    //     this.displayText(text.startText)
-    // }
+    tutorial(text) {
+        this.displayText(text.startText)
+    }
 }
