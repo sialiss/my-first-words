@@ -1,45 +1,54 @@
 import { eventBus } from './eventBus.js'
+import Item from './item.js'
+import NPC from './NPC.js'
 
 export default class Actions {
 
-    constructor([actDoc, actions]) {
+    constructor([actDoc, actions], chat) {
         this.actDoc = actDoc
         this.actions = actions
         this.mainWrapNode = document.getElementById("wrapper-with-actions-and-chat")
         this.actMenu = this.mainWrapNode.firstElementChild
+        this.chat = chat
         // this.elements = new Set()
         // for (const type in this.actions) {
         //     this.actionAdd(type)
         // }
     }
 
-    interactItemMenu(item) {
-        if (item.menuStatus == 0) {
+    interactMenu(object) {
+
+        if (object.menuStatus == 0) {
             // статус меню, чтобы закрывать меню предмета по повторному нажатию (1 - уже открыто, 0 - закрыто)
-            item.menuStatus = 1
+            object.menuStatus = 1
 
             this.mainWrapNode = document.getElementById("wrapper-with-actions-and-chat")
-            if (this.mainWrapNode.firstElementChild.classList.contains("itemAction")) {
-                // присвоить прошлому предмету статус меню 0
-                this.mainWrapNode.firstElementChild.ownItem.menuStatus = 0
+            if (this.mainWrapNode.firstElementChild.classList.contains("object-action")) {
+                // присвоить прошлому объекту статус меню 0
+                this.mainWrapNode.firstElementChild.ownObject.menuStatus = 0
             }
             this.mainWrapNode.firstElementChild.remove()
             // убирает первый элемент (в том числе благодаря этому оно не повторяется)
             
             // создаётся меню действий с предметом
             const actionElement = document.createElement("div")
-            actionElement.ownItem = item
+            actionElement.ownObject = object
             actionElement.classList.add("wrapper")
             actionElement.classList.add("actions")
-            actionElement.classList.add("itemAction")
+            actionElement.classList.add("object-action")
             this.mainWrapNode.insertAdjacentElement('afterbegin', actionElement)
 
             // создание кнопок
-            this.createButton("put item", () => this.putItem(item), actionElement)
+            if (object instanceof Item) {
+                this.createButton("put item", () => this.putItem(object), actionElement)
+            }
+            else if (object instanceof NPC) {
+                this.createButton("talk", () => this.talk(object), actionElement)
+            }
+                
         }
-
         else {
-            this.hideMenu(item)
+            this.hideMenu(object)
         }
     }
 
@@ -61,6 +70,10 @@ export default class Actions {
     putItem(item) {
         this.hideMenu(item)
         eventBus.dispatch("put item", item)
+    }
+
+    talk(NPC) {
+        this.chat.displayText(NPC.speech.greetings)
     }
     
     doSomething() {

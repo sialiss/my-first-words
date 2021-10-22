@@ -29,8 +29,8 @@ const actInfo = [actDoc, actions]
 
 // chat
 const chatNode = document.getElementById("chat")
-const startMessage = "Welcome!"
-const chatInfo = [chatNode, startMessage]
+const tutorial = { startText : "Welcome!" }
+const chatInfo = [chatNode, tutorial]
 
 // settings
 const settingsNode = document.getElementById("settings")

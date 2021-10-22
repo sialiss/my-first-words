@@ -4,7 +4,7 @@ import { eventBus } from "./eventBus.js"
 // по нажатию на элемент перехода, он убирает текущую локацию из детей поля, добавляет свою
 
 export default class Transition {
-    constructor([text, nextLocation, image ], currentLocationNode) {
+    constructor( [text, nextLocation, image ], currentLocationNode) {
         this.text = text
         this.nextLocation = nextLocation
         this.image = image
@@ -19,8 +19,7 @@ export default class Transition {
         this.currentLocationNode.append(this.transitionElement)
 
         this.transitionElement.addEventListener("click", () => {
-            eventBus.dispatch("transition clicked", this.nextLocation)
-            
+            eventBus.dispatch("transition clicked", this.nextLocation) // отправляется в поле
         }   )
     }
 }

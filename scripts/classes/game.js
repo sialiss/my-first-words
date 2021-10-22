@@ -38,8 +38,8 @@ export default class Game {
         this.fieldCreate()
         this.gamerCreate(this.gamerInfo)
         this.inventoryCreate()
-        this.actionsCreate()
         this.chatCreate()
+        this.actionsCreate()
         this.settingsTune()
     }
 
@@ -51,8 +51,9 @@ export default class Game {
 
     actionsCreate() {
         // создание действий
-        this.actions = new Actions(this.actInfo)
-        eventBus.listen("own item clicked", (item) => this.actions.interactItemMenu(item))
+        this.actions = new Actions(this.actInfo, this.chat)
+        eventBus.listen("own item clicked", (item) => this.actions.interactMenu(item))
+        eventBus.listen("NPC clicked", (NPC) => this.actions.interactMenu(NPC))
     }
 
     inventoryCreate() {

@@ -92,7 +92,7 @@
     grid-template-columns: 1fr;
     overflow-y: auto;
     max-height: 100%;
-    grid-auto-rows: 100%;
+    grid-auto-rows: 30%;
 }
 
 .field {
@@ -170,6 +170,21 @@
 
 .transition {
     background-color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.NPC {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .items-pic {

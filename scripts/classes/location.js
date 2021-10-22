@@ -1,5 +1,6 @@
 import Cell from './cell.js'
 import Transition from './transition.js'
+import NPC from './NPC.js'
 
 // класс локации
 
@@ -32,8 +33,8 @@ export default class Location {
             if (this.filling[i].transition) {
                 this.filling[i] = new Transition(this.filling[i].transition, this.locNode)
             }
-            else if (this.filling[i].npc) {
-                 
+            else if (this.filling[i].NPC) {
+                 this.filling[i] = new NPC(this.filling[i].NPC, this.locNode)
             }
             else {
                 this.filling[i] = new Cell(this.filling[i].items, this.locNode)
