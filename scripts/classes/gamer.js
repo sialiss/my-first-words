@@ -6,9 +6,11 @@ export default class Gamer extends Creature {
 
     // класс для игрока, здесь же будут все его параметры и навыки
 
-    constructor(title, picture, position) {
+    constructor(title, picture, position, inventory) {
         super(title, picture)
         this.position = position
+        // добавить возможность задавать начальный инвентарь игроку, взаимодействовать с инвентарем через игрока
+        this.inventory = inventory
     }
 
     nameChange(name) {

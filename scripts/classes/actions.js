@@ -73,7 +73,7 @@ export default class Actions {
     }
 
     talk(NPC) {
-        this.chat.displayText(NPC.speech.greetings)
+        this.chat.displayText(NPC.title, NPC.speech.greetings)
     }
     
     doSomething() {

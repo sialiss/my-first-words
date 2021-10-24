@@ -4,9 +4,9 @@ export default class Chat {
         this.node = node
     }
     
-    displayText(text) {
+    displayText(name, text) {
         this.textElement = document.createElement("p")
-        this.textElement.innerText = text
+        this.textElement.innerText = `${name} : ${text}`
 
         this.node.insertAdjacentElement('afterbegin', this.textElement)
     }

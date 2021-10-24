@@ -36,11 +36,11 @@ export default class Game {
         // создание всего
 
         this.fieldCreate()
-        this.gamerCreate(this.gamerInfo)
         this.inventoryCreate()
         this.chatCreate()
         this.actionsCreate()
         this.settingsTune()
+        this.gamerCreate(this.gamerInfo, this.inventory)
     }
 
     fieldCreate() {
@@ -65,7 +65,6 @@ export default class Game {
 
     chatCreate() {
         this.chat = new Chat(this.chatInfo[0])
-        this.chat.tutorial(this.chatInfo[1])
     }
 
     gamerCreate([gamerName, gamerPic]) {
