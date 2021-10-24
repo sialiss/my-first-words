@@ -13,7 +13,7 @@ const firstLocation = [
     { },
     { },
     { },
-    { NPC: [ "волшебная Рыбка", 'images/fish.png', { greetings : "Hello my dear", quest : "Потренируемся?"} ] },
+    { NPC: [ "Рыбка", 'images/fish.png', { greetings : "Здравствуй, друг мой", quest : "Потренируемся?"} ] },
     { },
     { },
     { },
