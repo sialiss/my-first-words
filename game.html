@@ -13,7 +13,7 @@
 
     <!-- стили -->
     <link href="styles/common-style.css" rel="stylesheet" type="text/css">
-    <link href="styles/game-page.css" rel="stylesheet" type="text/css">
+    <link href="styles/imports_game-page.css" rel="stylesheet" type="text/css">
 
     <!-- шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,10 +29,10 @@
 </head>
 
 <body>
-    <div class="wrapper main-wrapper">
+    <div class="wrapper middle-wrapper">
         <div class="wrapper wrapper-start">
 
-            <div class="wrapper wrapper-links">
+            <div class="wrapper wrapper-link">
                 <a class="wrapper wrapper-link" href="./index.html">
                     <img src="images/main-page-link.png" class="main-link-img">
                 </a>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="wrapper text" id = "wrapper-with-actions-and-chat">
+        <div class="wrapper act-and-chat" id = "wrapper-with-actions-and-chat">
             
             <div class="wrapper actions" id="actions"></div>
             
@@ -64,6 +64,10 @@
             <div class="wrapper history">
                 <p>history</p>
             </div>
+        </div>
+
+        <div class = "hidden wrapper fight pop-up" id = "fight">
+
         </div>
 
     </div>

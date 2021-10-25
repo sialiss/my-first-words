@@ -1,0 +1,17 @@
+.inventory {
+    overflow-y: auto;
+    max-height: 100%;
+    grid-auto-rows: 100%;
+    grid-column: 4 / 6;
+    grid-row: 5 / 6;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.cellInv {
+    display: grid;
+    object-fit: contain;
+    justify-items: center;
+    justify-self: center;
+    height: 50px;
+    width: 100%;
+}

@@ -1,0 +1,7 @@
+.fight {
+    grid-column: 1 / 4;
+    grid-row: 2 / 8;
+    gap: 0px;
+    padding: 0;
+    object-fit: contain;
+}

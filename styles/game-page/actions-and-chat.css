@@ -1,0 +1,32 @@
+.act-and-chat {
+    grid-column: 4 / 6;
+    grid-row: 1 / 5;
+    grid-template-rows: 1fr minmax(0, 1fr)
+}
+
+.chat {
+    grid-row: 2 / 3;
+    box-shadow: 0px 0px 0px 1px lightblue;
+    overflow-y: auto;
+    height: 100%;
+    gap: 10px;
+}
+
+.speech {
+    padding: 5px;
+}
+
+.actions {
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: 0px 0px 0px 1px lightblue;
+    overflow-y: auto;
+    max-height: 100%;
+    grid-auto-rows: 100%;
+}
+
+.act-btn {
+    box-shadow: 0px 0px 0px 1px black;
+    text-align: center;
+}

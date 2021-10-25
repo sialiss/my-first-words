@@ -1,0 +1,14 @@
+.middle-wrapper {
+    height: 100%;
+    background: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr)
+}
+
+.high-wrapper {
+    height: 100vh;
+    gap: 0;
+    background: none;
+     grid-template-columns: 1fr 2fr 1fr; /*поменять на авто в середине потом */
+    grid-template-rows: 1fr 3fr 1fr; /*поменять на авто в середине потом */
+}
