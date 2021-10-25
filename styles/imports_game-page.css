@@ -4,6 +4,9 @@
 @import "/styles/game-page/inventory.css";
 @import "/styles/game-page/link-and-locName.css";
 @import "/styles/game-page/main-wrappers.css";
-@import "/styles/game-page/media.css";
 @import "/styles/game-page/param-hist.css";
 @import "/styles/game-page/settings.css";
+
+
+@import "/styles/game-page/media940.css";
+@import "/styles/game-page/media530.css";

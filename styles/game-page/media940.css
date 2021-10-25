@@ -1,0 +1,48 @@
+@media screen and (max-width: 940px) {
+
+    body {
+        padding: 0;
+        height: 200vh;
+    }
+
+    .wrapper-start {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+    }
+
+    .middle-wrapper {
+        grid-template-rows: 1fr 4fr 5fr 1fr 1fr;
+    }
+
+    .act-and-chat {
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+    }
+
+    .field {
+        grid-column: 1 / 6;
+        grid-row: 3 / 4;
+    }
+
+    .inventory {
+        grid-column: 1 / 6;
+        grid-row: 4 / 5;
+    }
+
+    .param-hist {
+        grid-column: 1 / 6;
+        grid-row: 5 / 6;
+    }
+
+    .parameters {
+        grid-row: 1 / 2;
+    }
+
+    .history {
+        grid-column: 2 / 3;
+    }
+
+    .cell {
+    object-fit: contain;
+    }
+}

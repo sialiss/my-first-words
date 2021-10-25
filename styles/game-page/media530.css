@@ -1,0 +1,29 @@
+@media screen and (max-width: 530px) {
+
+    .middle-wrapper {
+        grid-template-rows: 1fr 6fr 7fr 1fr 1fr;
+    }
+
+    .wrapper-start {
+        grid-template-columns: 1fr;
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+    }
+
+    .wrapper-links {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        
+    }
+
+    .wrapper-location {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .link {
+        max-height: 100%;
+        max-width: 50%;
+        justify-self: center;
+    }
+}
