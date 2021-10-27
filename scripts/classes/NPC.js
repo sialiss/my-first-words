@@ -10,6 +10,7 @@ export default class NPC extends Creature {
         this.locNode = locNode
         this.speech = speech
         this.menuStatus = 0
+        // this.questStatus = 
         this.createNPC()
     }
 
