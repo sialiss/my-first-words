@@ -1,4 +1,5 @@
 import Item from './classes/item.js'
+import quest from './quests.js'
 
 const firstLocation = [
     { },
@@ -13,7 +14,7 @@ const firstLocation = [
     { },
     { },
     { },
-    { NPC: [ "Рыбка", 'images/fish.png', { greetings : "Здравствуй, друг мой", quest : "Потренируемся?"}, 1] },
+    { NPC: [ "Рыбка", 'images/fish.png', { greetings : "Здравствуй, друг мой", quest : quest.text[0]}, 1] },
     { },
     { },
     { },
