@@ -24,7 +24,11 @@ const training = {
     
 }
 
-const quests = {
-    training: { title: "training", main: training, availability: 1, next: quests.france.availability },
+const france = {
+
+}
+
+export const quests = {
+    training: { title: "training", main: training, availability: 1, next: "quests.france.availability" },
     france : { title: "France", main: france, availability : 0}
 }

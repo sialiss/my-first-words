@@ -1,5 +1,6 @@
 import Item from './classes/item.js'
-import quest from './quests.js'
+import Quest from './classes/quest.js'
+import {quests} from './quests.js'
 
 const firstLocation = [
     { },
@@ -14,7 +15,7 @@ const firstLocation = [
     { },
     { },
     { },
-    { NPC: [ "Рыбка", 'images/fish.png', { greetings : "Здравствуй, друг мой", quest : quest.text[0]}, 1] },
+    { NPC: [ "Рыбка", 'images/fish.png', { greetings : "Здравствуй, друг мой" }, new Quest(quests.training) ] },
     { },
     { },
     { },
@@ -28,6 +29,7 @@ const firstLocation = [
     { },
     { transition: ["to second location", "second location", "images/gamer.gif"] }
 ]
+
 const secondLocation = [
     { },
     { },
