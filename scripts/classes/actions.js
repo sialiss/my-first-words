@@ -73,8 +73,9 @@ export default class Actions {
     }
 
     talk(NPC) {
-        if (NPC.speech.quest) //добавить проверку на доступность квеста??
-            this.chat.displayText(NPC.title, NPC.speech.quest)
+        if (NPC.quest.availability == 1) {
+            this.chat.displayText(NPC.title, NPC.quest.start())
+        }
         else
             this.chat.displayText(NPC.title, NPC.speech.greetings)
     }

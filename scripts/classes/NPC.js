@@ -11,7 +11,6 @@ export default class NPC extends Creature {
         this.speech = speech
         this.menuStatus = 0
         this.quest = quest
-        console.log(quest)
         this.createNPC()
     }
 
@@ -22,14 +21,9 @@ export default class NPC extends Creature {
         this.NPCelement.style.backgroundImage = `url(${this.picture})`
         this.locNode.append(this.NPCelement)
 
-        if (this.quest.availability == 1) {
-            this.NPCelement.addEventListener("click", () => this.quest.start())
-        }
-        else {
-            this.NPCelement.addEventListener("click", () => {
-                eventBus.dispatch("NPC clicked", this)
-            })
-        }
-
+        this.NPCelement.addEventListener("click", () => {
+            eventBus.dispatch("NPC clicked", this)
+        })
+        
     }
 }

@@ -1,3 +1,5 @@
+import { eventBus } from './eventBus.js'
+
 export default class Quest {
 
     constructor({title, main, availability, next}) {
@@ -8,10 +10,10 @@ export default class Quest {
     }
 
     start() {
-        console.log(this)
         // start = { text : ["text"], act : выбор (говорение)}
         // у выбора должна быть следующая сцена (в зависимости от выбора)
-        
-        const start = this.main.start
+        eventBus.listen("speech listened", (speech) => speech.listened = 1)
+        return this.main.start.text
     }
+
 }
