@@ -12,7 +12,7 @@
     gap: 0px;
     padding: 0;
     object-fit: contain;
-    background-image: url(/images/field-background/1.png);
+    background-image: url(../images/field-background/1.png);
     background-size: cover;
 }
 
