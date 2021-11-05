@@ -45,5 +45,9 @@ const settingsInfo = {
     popUpNode: popUpNode, defaultSet: defaultSet
 }
 
-const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation, chatInfo, settingsInfo)
+// fight
+const fightNode = document.getElementById("fight")
+const fightInfo = [fightNode]
+
+const game = new Game(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation, chatInfo, settingsInfo, fightInfo)
 game.start()

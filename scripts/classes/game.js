@@ -6,6 +6,7 @@ import Inventory from './inventory.js'
 import Actions from './actions.js'
 import Chat from './chat.js'
 import Settings from './settings.js'
+import Fight from './fight.js'
 
 export default class Game {
 
@@ -19,7 +20,8 @@ export default class Game {
     gamerInfo - [gamerPic, gamerName]
     */
     
-    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation, chatInfo, settingsInfo) {
+    constructor(gamerInfo, creaturesInfo, fieldInfo, itemsInfo, invInfo, actInfo, currentLocation, startLocation,
+        chatInfo, settingsInfo, fightInfo) {
         this.gamerInfo = gamerInfo
         this.creaturesInfo = creaturesInfo
         this.fieldInfo = fieldInfo
@@ -29,6 +31,7 @@ export default class Game {
         this.chatInfo = chatInfo
         this.currentLocation = currentLocation
         this.settingsInfo = settingsInfo
+        this.fightInfo = fightInfo
         this.locationNameChange(this.currentLocation, startLocation)
     }
     
@@ -39,6 +42,7 @@ export default class Game {
         this.inventoryCreate()
         this.chatCreate()
         this.actionsCreate()
+        this.fightCreate()
         this.settingsTune()
         this.gamerCreate(this.gamerInfo, this.inventory)
     }
@@ -75,6 +79,10 @@ export default class Game {
         eventBus.listen("cell clicked", (cell) => this.gamer.takeItem(cell))
         eventBus.listen("put item", (item) => this.gamer.putItem(item))
         eventBus.listen("location changed", (newPosition) => this.gamer.moveToCell(newPosition))
+    }
+
+    fightCreate() {
+        this.fight = new Fight(this.fightInfo)
     }
 
     settingsTune() {
